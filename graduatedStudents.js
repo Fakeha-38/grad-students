@@ -70,9 +70,23 @@ const students = [
     email: "angela@example.com",
     phone: "555-555-5555",
     graduated: true
-  },
+  }
 ];
 
 const graduatedStudents = (listOfStudents) => {
+  const output = [];
+  for (let student of listOfStudents) {
+    const { name, graduated, email } = student
+    if(graduated) {
+      const gradLiteral = `${name} has graduated and their diploma will be sent to ${email}.`;
+      output.push(gradLiteral);
+    }
+    else {
+      const gradLiteral = `${name} has not graduated yet, no diploma will be sent.`;
+      output.push(gradLiteral);
+    }
+  }
+  return output;
 //Implement function
 };
+graduatedStudents(students);
